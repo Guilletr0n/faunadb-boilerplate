@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -31,6 +35,7 @@ module.exports = {
       resolve: `gatsby-source-faunadb`,
       options: {
         secret: process.env.FAUNADB_SECRET,
+        //secret: `fnAD4rKwzJACAbQKIpAv8RdGuov8zfo6WO5UmOwG`,
         index: `animalsByType`,
         type: `animals`,
         size: 100
